@@ -9,15 +9,17 @@ class WeatherList extends Component {
     const temps = cityData.list.map(weather => weather.main.temp);
     const pressures = cityData.list.map(weather => weather.main.pressure);
     const humidities = cityData.list.map(weather => weather.main.humidity);
+    const date = cityData.list[0].dt_txt;
+    const currentDate = date.substring(0,10);
     const { lon, lat } = cityData.city.coord;
 
     return (
       <tr key={name}>
-        <td><GoogleMap lon={lon} lat={lat} /></td>
-        <td><Chart data={temps} color="orange" units="K" /></td>
+        <td><GoogleMap lon={lon} lat={lat} style={{marginBottom: '10px'}}/><span style={{fontWeight: 'bold'}}>{name}</span><span style={{display:'block'}}>{currentDate}</span></td>
+        <td><Chart data={temps} color="orange" units="°C" /></td>
         <td><Chart data={pressures} color="green" units="hPa" /></td>
         <td><Chart data={humidities} color="black" units="%" /></td>
-      </tr>
+        </tr>
     );
   }
 
@@ -26,10 +28,10 @@ class WeatherList extends Component {
       <table className="table table-hover">
         <thead>
           <tr>
-            <th>City</th>
-            <th>Temperature (K)</th>
-            <th>Pressure (hPa)</th>
-            <th>Humidity (%)</th>
+            <th>Thành phố</th>
+            <th>Nhiệt độ (°C)</th>
+            <th>Áp suất (hPa)</th>
+            <th>Độ ẩm (%)</th>
           </tr>
         </thead>
         <tbody>

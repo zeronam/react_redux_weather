@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/StephenGrider/ReduxSimpleStarter.git"
+    "url": "https://github.com/zeronam/react_redux_weather.git"
   },
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
@@ -31,9 +31,5 @@
     "react-sparklines": "^1.6.0",
     "redux": "^3.0.4",
     "redux-promise": "^0.5.0"
-  },
-  "bugs": {
-    "url": "https://github.com/StephenGrider/ReduxSimpleStarter/issues"
-  },
-  "homepage": "https://github.com/StephenGrider/ReduxSimpleStarter#readme"
+  }
 }
